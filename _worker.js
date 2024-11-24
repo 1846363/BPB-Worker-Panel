@@ -4085,7 +4085,7 @@ var SignJWT = class extends ProduceJWT {
 };
 
 // src/worker.js
-var userID = "94eb1d15-d74c-4ba4-b02e-b752f92101a9";
+var userID = "89b3cbba-e6ac-485a-9481-976a0415eab9";
 var trojanPassword = `bpb-trojan`;
 var proxyIPs = ["bpb.yousef.isegaro.com"];
 var defaultHttpPorts = ["80", "8080", "2052", "2082", "2086", "2095", "8880"];
@@ -6178,7 +6178,7 @@ function renderHomePage(proxySettings, hostName, isPassSet) {
             let qrcodeContainer = document.getElementById('qrcode-container');
             let forcedPassChange = false;
             const darkModeToggle = document.getElementById('darkModeToggle');
-                    
+
             const hasFormDataChanged = () => {
                 const currentFormData = new FormData(configForm);
                 const currentFormDataEntries = [...currentFormData.entries()];
@@ -6199,13 +6199,13 @@ function renderHomePage(proxySettings, hostName, isPassSet) {
 
                 return nonCheckboxFieldsChanged || checkboxFieldsChanged;
             };
-            
+
             const enableApplyButton = () => {
                 const isChanged = hasFormDataChanged();
                 applyButton.disabled = !isChanged;
                 applyButton.classList.toggle('disabled', !isChanged);
             };
-                        
+
             passwordChangeForm.addEventListener('submit', event => resetPassword(event));
             document.getElementById('logout').addEventListener('click', event => logout(event));
             configForm.addEventListener('submit', (event) => applySettings(event, configForm));
@@ -6311,7 +6311,7 @@ function renderHomePage(proxySettings, hostName, isPassSet) {
         }
 
         const handlePortChange = (event) => {
-            
+
             if(event.target.checked) { 
                 activePortsNo++ 
                 defaultHttpsPorts.includes(event.target.name) && activeHttpsPortsNo++;
@@ -6328,7 +6328,7 @@ function renderHomePage(proxySettings, hostName, isPassSet) {
                 defaultHttpsPorts.includes(event.target.name) && activeHttpsPortsNo++;
                 return false;
             }
-                
+
             if (activeHttpsPortsNo === 0) {
                 event.preventDefault();
                 event.target.checked = !event.target.checked;
@@ -6337,9 +6337,9 @@ function renderHomePage(proxySettings, hostName, isPassSet) {
                 return false;
             }
         }
-        
+
         const handleProtocolChange = (event) => {
-            
+
             if(event.target.checked) { 
                 activeProtocols++ 
             } else {
@@ -6448,7 +6448,7 @@ function renderHomePage(proxySettings, hostName, isPassSet) {
                 alert('\u26D4 Invalid IPs or Domains \u{1FAE4}\\n\\n' + invalidIPs.map(ip => '\u26A0\uFE0F ' + ip).join('\\n'));
                 return false;
             }
-            
+
             if (invalidEndpoints.length) {
                 alert('\u26D4 Invalid endpoint \u{1FAE4}\\n\\n' + invalidEndpoints.map(endpoint => '\u26A0\uFE0F ' + endpoint).join('\\n'));
                 return false;
@@ -6510,7 +6510,7 @@ function renderHomePage(proxySettings, hostName, isPassSet) {
                     method: 'GET',
                     credentials: 'same-origin'
                 });
-            
+
                 if (response.ok) {
                     window.location.href = '/login';
                 } else {
@@ -6543,7 +6543,7 @@ function renderHomePage(proxySettings, hostName, isPassSet) {
                 passwordError.textContent = '\u26A0\uFE0F Password must contain at least one capital letter, one number, and be at least 8 characters long.';
                 return false;
             }
-                    
+
             try {
                 const response = await fetch('/panel/password', {
                     method: 'POST',
@@ -6553,7 +6553,7 @@ function renderHomePage(proxySettings, hostName, isPassSet) {
                     body: newPassword,
                     credentials: 'same-origin'
                 });
-            
+
                 if (response.ok) {
                     modal.style.display = "none";
                     document.body.style.overflow = "";
@@ -6710,7 +6710,7 @@ function renderLoginPage() {
                     },
                     body: password
                 });
-            
+
                 if (response.ok) {
                     window.location.href = '/panel';
                 } else {
@@ -8872,3 +8872,4 @@ js-sha256/src/sha256.js:
    *)
 */
 //# sourceMappingURL=worker.js.map
+  
